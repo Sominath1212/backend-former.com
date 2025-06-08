@@ -17,21 +17,21 @@ const login = async (req, res) => {
               expiresIn: "1h", // Token expires in 1 hour (e.g., '15m', '7d', '24h')
             };
             const payload = {
+              userid: user._id,
               username: user.username,
               useremail: user.email,
               userrole: user.role,
             };
             const token = jwt.sign(payload, process.env.JWT_SECRET, options);
-            console.log(token);
-            res
-              .status(200)
-              .json({
-                message: "logined-in successfully",
-                token: token,
-                role: user.role,
-              });
+            // console.log(token);
+            res.status(200).json({
+              message: "logined-in successfully",
+              token: token,
+              role: user.role,
+            });
           } else {
-            console.log("❌ Invalid password!");
+          
+            res.status(401).json({ message: "Invalid Creaditials" });
           }
         });
       } else {
