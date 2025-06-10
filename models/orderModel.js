@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const orderSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User", // reference to User collection
+    ref: "User", 
     required: true,
   },
 
@@ -11,7 +11,7 @@ const orderSchema = new mongoose.Schema({
     {
       productId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Product", // reference to Product collection
+        ref: "Product", 
         required: true,
       },
       productName: {
