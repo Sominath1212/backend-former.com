@@ -39,13 +39,15 @@ const updateProduct = (req, res) => {
     productModel.findOne({ _id: id }).then((product) => {
       if (product) {
         // update product
-        productModel.updateOne(productdata).then((updatedProduct) => {
-          if (updatedProduct) {
-            res
-              .status(200)
-              .json({ message: "Product updated", updatedProduct });
-          }
-        });
+        productModel
+          .updateOne({ _id: id }, { $set: productdata })
+          .then((updatedProduct) => {
+            if (updatedProduct) {
+              res
+                .status(200)
+                .json({ message: "Product updated", updatedProduct });
+            }
+          });
       } else {
         res.status(404).json({ message: "Product not found" });
       }

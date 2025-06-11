@@ -23,6 +23,14 @@ const ProductSchema = new mongoose.Schema({
   stock: Number,
   description: String,
   weight: String,
+},{
+  timestamps: true, // <-- Add this line!
 });
 
 module.exports = mongoose.model("Product", ProductSchema);
+
+
+
+
+
+
