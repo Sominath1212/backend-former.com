@@ -21,3 +21,14 @@ app.listen(PORT, () => {
   connectDB();
   console.log(`server is started on the port \nhttp://localhost:${PORT}`);
 });
+
+
+
+
+// *
+// 
+// 
+// headers: {
+  // "Content-Type": "application/json",
+  // "Authorization": `Bearer ${token}`
+// },

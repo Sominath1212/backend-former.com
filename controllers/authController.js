@@ -14,7 +14,7 @@ const login = async (req, res) => {
           if (err) throw err;
           if (isMatch) {
             const options = {
-              expiresIn: "1h", // Token expires in 1 hour (e.g., '15m', '7d', '24h')
+              expiresIn: "7h", // Token expires in 1 hour (e.g., '15m', '7d', '24h')
             };
             const payload = {
               userid: user._id,
