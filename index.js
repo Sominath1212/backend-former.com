@@ -6,6 +6,7 @@ const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const profileRoutes = require("./routes/profileRoutes");
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 const app = express();
@@ -17,18 +18,16 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/order", orderRoutes);
+app.use("/api/v1/profile", profileRoutes);
 app.listen(PORT, () => {
   connectDB();
   console.log(`server is started on the port \nhttp://localhost:${PORT}`);
 });
 
-
-
-
 // *
-// 
-// 
+//
+//
 // headers: {
-  // "Content-Type": "application/json",
-  // "Authorization": `Bearer ${token}`
+// "Content-Type": "application/json",
+// "Authorization": `Bearer ${token}`
 // },
